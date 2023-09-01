@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     }
   }
 
-  const { imageUrl, theme, room } = await request.json();
+  const { imageUrl, theme } = await request.json();
 
   // POST request to Replicate to start the image restoration generation process
   let startResponse = await fetch("https://api.replicate.com/v1/predictions", {
@@ -45,17 +45,11 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       version:
-        "854e8727697a057c525cdb45ab037f64ecca770a1769cc52287c2e56472a247b",
+        "d833353a550733a7c8d3176eed830bbe8aacc2bc6767217702cde5fb8e006054",
       input: {
         image: imageUrl,
-        prompt:
-          room === "Gaming Room"
-            ? "a room for gaming with gaming computers, gaming consoles, and gaming chairs"
-            : `a ${theme.toLowerCase()} ${room.toLowerCase()}`,
-        a_prompt:
-          "best quality, extremely detailed, photo from Pinterest, interior, cinematic photo, ultra-detailed, ultra-realistic, award-winning",
-        n_prompt:
-          "longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality",
+        prompt: theme.toLowerCase(),
+        seed: 0
       },
     }),
   });
@@ -79,6 +73,8 @@ export async function POST(request: Request) {
     let jsonFinalResponse = await finalResponse.json();
 
     if (jsonFinalResponse.status === "succeeded") {
+      console.log("image succeeded");
+      console.log(jsonFinalResponse.output)
       restoredImage = jsonFinalResponse.output;
     } else if (jsonFinalResponse.status === "failed") {
       break;

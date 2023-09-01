@@ -1,21 +1,19 @@
-# [RoomGPT](https://roomGPT.io) - redesign your room with AI
+# [proHeadshot](https://proHeadshot.pics) - professional headshot pics with AI
 
-This is the previous and open source version of RoomGPT.io (a paid SaaS product). It's the very first version of roomGPT without the auth, payments, or additional features and it's simple to clone, deploy, and play around with.
+This is an open source version of proheadshot.pics (a paid SaaS product). It's a fork of roomGPT without the auth, payments, or additional features and it's simple to clone, deploy, and play around with.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Nutlope/roomGPT&env=REPLICATE_API_KEY&project-name=room-GPT&repo-name=roomGPT)
-
-[![Room GPT](./public/screenshot.png)](https://roomGPT.io)
+[![Room GPT](./public/og-image.png)](https://proheadshot.pics)
 
 ## How it works
 
-It uses an ML model called [ControlNet](https://github.com/lllyasviel/ControlNet) to generate variations of rooms. This application gives you the ability to upload a photo of any room, which will send it through this ML Model using a Next.js API route, and return your generated room. The ML Model is hosted on [Replicate](https://replicate.com) and [Bytescale](https://www.bytescale.com/) is used for image storage.
+It uses a custom ML model called [headshot-pics](https://github.com/lllyasviel/ControlNet) used to generate variations headshot pics. This application gives you the ability to upload a photo of any face, which will send it through this ML Model using a Next.js API route, and return your generated professional headshot. The ML Model is hosted on [Replicate](https://replicate.com) and [Bytescale](https://www.bytescale.com/) is used for image storage.
 
 ## Running Locally
 
 ### Cloning the repository the local machine.
 
 ```bash
-git clone https://github.com/Nutlope/roomGPT
+git clone https://github.com/lucataco/proheadshot
 ```
 
 ### Creating a account on Replicate to get an API key.
@@ -43,12 +41,6 @@ Then, run the application in the command line and it will be available at `http:
 ```bash
 npm run dev
 ```
-
-## One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Nutlope/roomGPT&env=REPLICATE_API_KEY&project-name=room-GPT&repo-name=roomGPT)
 
 ## License
 

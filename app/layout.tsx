@@ -1,11 +1,12 @@
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
+import Script from 'next/script'
 import "../styles/globals.css";
 
-let title = "Dream Room Generator";
-let description = "Generate your dream room in seconds.";
-let ogimage = "https://roomgpt-demo.vercel.app/og-image.png";
-let sitename = "roomGPT.io";
+let title = "Pro Headshot Generator";
+let description = "Generate your professional headshot instantly.";
+let ogimage = "/og-image.png";
+let sitename = "proHeadshot.pics";
 
 export const metadata: Metadata = {
   title,
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     images: [ogimage],
     title,
     description,
-    url: "https://roomgpt-demo.vercel.app",
+    url: "https://proheadshot.vercel.app",
     siteName: sitename,
     locale: "en_US",
     type: "website",
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className="bg-[#17181C] text-white">
         {children}
         <Analytics />
+        <Script defer data-domain="proheadshot.pics" src="https://data.lucata.co/js/script.js" />
       </body>
     </html>
   );

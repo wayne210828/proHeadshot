@@ -3,11 +3,11 @@ import redis from "../../utils/redis";
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 
-// Create a new ratelimiter, that allows 5 requests per 24 hours
+// Create a new ratelimiter, that allows 3 requests per 24 hours
 const ratelimit = redis
   ? new Ratelimit({
       redis: redis,
-      limiter: Ratelimit.fixedWindow(5, "1440 m"),
+      limiter: Ratelimit.fixedWindow(3, "1440 m"),
       analytics: true,
     })
   : undefined;
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
 
     if (!result.success) {
       return new Response(
-        "Too many uploads in 1 day. Please try again in a 24 hours.",
+        "Too many uploads in 1 day. Please try again in 24 hours.",
         {
           status: 429,
           headers: {

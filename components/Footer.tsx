@@ -18,7 +18,7 @@ export default function Footer() {
         <Link
           href="https://twitter.com/lucataco93"
           className="group"
-          aria-label="TaxPal on Twitter"
+          aria-label="Lucataco on Twitter"
         >
           <svg
             aria-hidden="true"
@@ -28,9 +28,9 @@ export default function Footer() {
           </svg>
         </Link>
         <Link
-          href="https://github.com/lucataco"
+          href="https://github.com/lucataco/proHeadshot"
           className="group"
-          aria-label="TaxPal on GitHub"
+          aria-label="Lucataco on GitHub"
         >
           <svg
             aria-hidden="true"

@@ -71,19 +71,23 @@ export async function POST(request: Request) {
       },
     });
     let jsonFinalResponse = await finalResponse.json();
+    // console.log(jsonFinalResponse)
 
     if (jsonFinalResponse.status === "succeeded") {
       console.log("image succeeded");
       console.log(jsonFinalResponse.output)
       restoredImage = jsonFinalResponse.output;
     } else if (jsonFinalResponse.status === "failed") {
-      break;
+      return new Response(
+        "No face found in image",
+        {
+          status: 400,
+        }
+      );
     } else {
       await new Promise((resolve) => setTimeout(resolve, 1000));
     }
   }
 
-  return NextResponse.json(
-    restoredImage ? restoredImage : "Failed to restore image"
-  );
+  return NextResponse.json(restoredImage);
 }

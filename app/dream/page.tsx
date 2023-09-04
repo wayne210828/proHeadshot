@@ -76,12 +76,12 @@ export default function DreamPage() {
       },
       body: JSON.stringify({ imageUrl: fileUrl, theme }),
     });
-
-    let newPhoto = await res.json();
-    console.log(newPhoto)
-    if (res.status !== 200) {
-      setError(newPhoto);
+    if(res.status === 429){
+      setError("You have attempted too many runs today. Please try again in 24 hours");
+    } else if(res.status === 400){
+      setError("Could not find a face in the image, please try again an make sure your face is centered")
     } else {
+      let newPhoto = await res.json();
       setRestoredImage(newPhoto);
     }
     setTimeout(() => {
@@ -124,7 +124,7 @@ export default function DreamPage() {
                   <div className="mt-4 w-full max-w-sm">
                     <div className="flex mt-6 w-96 items-center space-x-3">
                       <Image
-                        src="/number-3-white.svg"
+                        src="/number-2-white.svg"
                         width={30}
                         height={30}
                         alt="1 icon"

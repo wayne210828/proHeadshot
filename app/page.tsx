@@ -17,7 +17,7 @@ export default function HomePage() {
           className="border border-gray-700 rounded-lg py-2 px-4 text-gray-400 text-sm mb-5 transition duration-300 ease-in-out"
         >
           Used over{" "}
-          <span className="text-blue-600">10.5 thousand</span>
+          <span className="text-blue-600">15 thousand</span>
           {" "}times and counting
         </a>
         <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-gray-300 sm:text-7xl">

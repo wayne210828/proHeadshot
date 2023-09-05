@@ -17,7 +17,9 @@ import { themeType, themes } from "../../utils/dropdownTypes";
 
 // Configuration for the uploader
 const uploader = Uploader({
-  apiKey: "free",
+  apiKey: !!process.env.NEXT_PUBLIC_UPLOAD_API_KEY
+    ? process.env.NEXT_PUBLIC_UPLOAD_API_KEY
+    : "free",
 });
 
 const options = {

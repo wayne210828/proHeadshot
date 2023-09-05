@@ -69,6 +69,7 @@ export default function DreamPage() {
   async function generatePhoto(fileUrl: string) {
     await new Promise((resolve) => setTimeout(resolve, 200));
     setLoading(true);
+
     const res = await fetch("/generate", {
       method: "POST",
       headers: {
@@ -78,12 +79,37 @@ export default function DreamPage() {
     });
     if(res.status === 429){
       setError("You have attempted too many runs today. Please try again in 24 hours");
-    } else if(res.status === 400){
-      setError("Could not find a face in the image, please try again an make sure your face is centered")
     } else {
-      let newPhoto = await res.json();
-      setRestoredImage(newPhoto);
+      let webhookUrl = await res.json();
+      console.log("webhookUrl:", webhookUrl);
+
+      // Loop until able to get Replicate result
+      while (!restoredImage) {
+        console.log("polling for result...");
+        let genResponse = await fetch("/prediction", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ hookUrl: webhookUrl })
+        });
+        let finalResponse = await genResponse.json();
+        console.log("finalResponse:", finalResponse);
+
+        // If response is an image with URL from Replicate
+        if(finalResponse.startsWith("https://pbxt.replicate.delivery")) {
+          setRestoredImage(finalResponse);
+          break;
+        } else if (finalResponse === "Failed to restore image") {
+          console.log("Failed to generate headshot");
+          setError("Could not find a face in the image, please try again and make sure your face is centered")
+          break;
+        } else {
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+        }
+      }
     }
+
     setTimeout(() => {
       setLoading(false);
     }, 1300);
@@ -121,7 +147,7 @@ export default function DreamPage() {
                       themes={themes}
                     />
                   </div>
-                  <div className="mt-4 w-full max-w-sm">
+                  <div className="mt-4 mb-2 w-full max-w-sm">
                     <div className="flex mt-6 w-96 items-center space-x-3">
                       <Image
                         src="/number-2-white.svg"

@@ -16,7 +16,7 @@ const testimonials = [
   [
     {
       content:
-        "I just used it on my grandma and loved it! Great work!",
+        "I just used it on my dad and he loved it! Great work!",
       link: "https://twitter.com/",
       author: {
         name: "Paulo I.",
@@ -48,10 +48,10 @@ export function Testimonials() {
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto md:text-center">
-          <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-100 sm:text-6xl">
+          <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-black-800 sm:text-6xl">
             Loved by many worldwide
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-slate-400 leading-7">
+          <p className="mx-auto mt-6 max-w-xl text-lg text-gray-700 leading-7">
             See what our users are saying about proHeadshot
           </p>
         </div>
@@ -68,7 +68,7 @@ export function Testimonials() {
                     className="hover:scale-105 transition duration-300 ease-in-out"
                   >
                     <a href={testimonial.link} target="_blank" rel="noreferrer">
-                      <figure className="relative rounded-2xl bg-gray-800 p-6 shadow-xl shadow-slate-900/10">
+                      <figure className="relative rounded-2xl bg-gray-700 p-6 shadow-xl shadow-slate-900/10">
                         <blockquote className="relative">
                           <p className="text-lg tracking-tight text-slate-100">
                             "{testimonial.content}"

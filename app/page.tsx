@@ -14,20 +14,20 @@ export default function HomePage() {
           href="https://replicate.com/catacolabs/headshot-pics"
           target="_blank"
           rel="noreferrer"
-          className="border border-gray-700 rounded-lg py-2 px-4 text-gray-400 text-sm mb-5 transition duration-300 ease-in-out"
+          className="border border-gray-800 rounded-lg py-2 px-4 text-gray-800 text-sm mb-5 transition duration-300 ease-in-out"
         >
           Used over{" "}
-          <span className="text-blue-600">15 thousand</span>
-          {" "}times and counting
+          <span className="text-blue-600">19.7 thousand</span>
+          {" "}times and counting!
         </a>
-        <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-gray-300 sm:text-7xl">
+        <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-gray-900 sm:text-7xl">
           Professional headshot pics{" "}
           <span className="relative whitespace-nowrap text-blue-600">
             <SquigglyLines />
             <span className="relative">using AI</span>
           </span>
         </h1>
-        <h2 className="mx-auto mt-12 max-w-xl text-lg sm:text-gray-400  text-gray-500 leading-7">
+        <h2 className="mx-auto mt-12 max-w-xl text-lg sm:text-gray-700  text-gray-700 leading-7">
           Take a picture of your face and instantly get a Professional Headshot. 
           Join thousands of happy customers and get your next LinkedIn photo today!
         </h2>
@@ -50,6 +50,15 @@ export default function HomePage() {
                   height={300}
                 />
               </div>
+              <div className="sm:mt-40 mt-48">
+                <Image
+                  alt="Arrow pointing to the next image"
+                  src="/arrow.png"
+                  className="rounded-2xl"
+                  width={100}
+                  height={100}
+                />
+              </div>
               <div className="sm:mt-0 mt-8">
                 <h3 className="mb-1 font-medium text-lg">Generated Headshot</h3>
                 <Image
@@ -65,7 +74,7 @@ export default function HomePage() {
         </div>
       </main>
       <Testimonials />
-      <p className="mx-auto mt-6 mb-6 max-w-xl text-lg text-slate-100 leading-7">
+      <p className="mx-auto mt-8 mb-6 max-w-xl text-lg text-gray-700 leading-7">
           Support my work with a donation!
       </p>
       <div className="flex justify-center space-x-4 mb-2">

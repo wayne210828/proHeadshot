@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#17181C] text-white">
+      <body className="text-black">
         {children}
         <Analytics />
         <Script defer data-domain="proheadshot.pics" src="https://data.lucata.co/js/script.js" />

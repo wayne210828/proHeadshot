@@ -99,7 +99,7 @@ export default function DreamPage() {
         console.log("finalResponse:", finalResponse);
 
         // If response is an image with URL from Replicate
-        if(finalResponse.startsWith("https://pbxt.replicate.delivery")) {
+        if(finalResponse.startsWith("https://")) {
           setRestoredImage(finalResponse);
           break;
         } else if (finalResponse === "Failed to restore image") {
@@ -121,7 +121,7 @@ export default function DreamPage() {
     <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Header />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
-        <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-100 sm:text-6xl mb-5">
+        <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-black-800 sm:text-6xl mb-5">
           Generate your <span className="text-blue-600">Professional</span> headshot
         </h1>
         <ResizablePanel>
@@ -132,7 +132,7 @@ export default function DreamPage() {
                   <div className="space-y-4 w-full max-w-sm">
                     <div className="flex mt-3 items-center space-x-3">
                       <Image
-                        src="/number-1-white.svg"
+                        src="/number-1-black.svg"
                         width={30}
                         height={30}
                         alt="1 icon"
@@ -152,7 +152,7 @@ export default function DreamPage() {
                   <div className="mt-4 mb-2 w-full max-w-sm">
                     <div className="flex mt-6 w-96 items-center space-x-3">
                       <Image
-                        src="/number-2-white.svg"
+                        src="/number-2-black.svg"
                         width={30}
                         height={30}
                         alt="1 icon"

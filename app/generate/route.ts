@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         "60f361009ed29b4d85ddefdf0eb7c3af98ad39da7e0c29b3ede6636ee10a5d52",
       input: {
         image: imageUrl,
-        prompt: theme.toLowerCase(),
+        gender: theme.toLowerCase(),
         seed: 0
       },
     }),

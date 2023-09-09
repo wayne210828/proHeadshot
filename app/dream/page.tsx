@@ -30,12 +30,12 @@ const options = {
     colors: {
       primary: "#2563EB", // Primary buttons & links
       error: "#d23f4d", // Error messages
-      shade100: "#fff", // Standard text
-      shade200: "#fffe", // Secondary button text
+      shade100: "#000", // Standard text
+      shade200: "#444e", // Secondary button text
       shade300: "#fffd", // Secondary button text (hover)
-      shade400: "#fffc", // Welcome text
+      shade400: "#000c", // Welcome text
       shade500: "#fff9", // Modal close button
-      shade600: "#fff7", // Border
+      shade600: "#4447", // Border
       shade700: "#fff2", // Progress indicator background
       shade800: "#fff1", // File item background
       shade900: "#ffff", // Various (draggable crop buttons, etc.)
@@ -253,18 +253,27 @@ export default function DreamPage() {
                   </button>
                 )}
               </div>
-              <div className="flex justify-center mt-16 mb-2">
                 {restoredLoaded && (
-                  <Link href="https://buymeacoffee.com/lucataco" target="_blank">
-                    <Image
-                      width="200"
-                      height="100"
-                      src="/bmac.png"
-                      alt="Buy me a Coffee"
-                    />
-                  </Link>
+                  <div className="flex flex-col items-center mt-14 mb-6">
+                    <p className="flex justify-center font-small text-gray-700">
+                      Generated headshots are automatically deleted after 1 hour. 
+                      Be sure to download and share!
+                    </p>
+                    <p className="mb-6">
+                      <Link target="_blank" href="https://twitter.com/search?q=%23proheadshot">
+                        <span className="text-blue-600">#proheadshot</span>
+                      </Link>
+                    </p>
+                    <Link href="https://buymeacoffee.com/lucataco" target="_blank">
+                      <Image
+                        width="200"
+                        height="100"
+                        src="/bmac.png"
+                        alt="Buy me a Coffee"
+                      />
+                    </Link>
+                  </div>
                 )}
-              </div>
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>

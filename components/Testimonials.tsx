@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const testimonials = [
   [
@@ -52,7 +53,10 @@ export function Testimonials() {
             Loved by many worldwide
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-gray-700 leading-7">
-            See what our users are saying about proHeadshot
+            See what our users are saying about{" "}
+            <Link target="_blank" href="https://twitter.com/search?q=%23proheadshot">
+              <span className="text-blue-600">#proheadshot</span>
+            </Link>
           </p>
         </div>
         <ul
